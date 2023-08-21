@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  fluentbit:
+    hostname: fluentbit
+    image: fluent/fluent-bit
+    volumes:
+      - "${LOCAL}:/fluent-bit/etc"
+      - "${VOLUME}/wazuh-worker05_worker05-wazuh-logs:/opt/wazuh-alerts-worker05"
+      - "${VOLUME}/wazuh-worker06_worker06-wazuh-logs:/opt/wazuh-alerts-worker06"
